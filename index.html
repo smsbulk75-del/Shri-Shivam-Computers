@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shri Shivam Computers | Reliable Tech Solutions</title>
+  <!-- Google Fonts & simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* container utility */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header & nav */
+    header {
+      background: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 16px 0;
+    }
+
+    .logo h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .logo p {
+      font-size: 0.8rem;
+      color: #475569;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1e293b;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #2a5298;
+      border-bottom: 2px solid #2a5298;
+      padding-bottom: 4px;
+    }
+
+    /* main sections */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .hero {
+      background: linear-gradient(105deg, #ffffff 0%, #f1f5f9 100%);
+      padding: 70px 0;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
+    .hero-text .highlight {
+      color: #2a5298;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #334155;
+      margin-bottom: 28px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      background: #1e293b;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: #2a5298;
+      box-shadow: 0 4px 8px rgba(42,82,152,0.2);
+    }
+    .btn-primary:hover {
+      background: #1e3c72;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #2a5298;
+      color: #2a5298;
+    }
+    .btn-outline:hover {
+      background: #2a5298;
+      color: white;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-image i {
+      font-size: 12rem;
+      color: #2a5298;
+      opacity: 0.85;
+    }
+
+    /* business details card */
+    .contact-card {
+      background: white;
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+      margin: 20px 0;
+      border: 1px solid #eef2ff;
+    }
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: space-between;
+      margin-top: 24px;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #f8fafc;
+      padding: 18px 24px;
+      border-radius: 60px;
+      flex: 1;
+      min-width: 220px;
+    }
+    .info-item i {
+      font-size: 2rem;
+      color: #2a5298;
+    }
+    .info-item div strong {
+      display: block;
+      font-size: 1rem;
+    }
+    .info-item div span {
+      color: #334155;
+    }
+
+    /* page content for privacy, terms, contact */
+    .page-card {
+      background: white;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+      border: 1px solid #e9edf2;
+    }
+    .page-card h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0f172a;
+      border-left: 6px solid #2a5298;
+      padding-left: 20px;
+    }
+    .page-card h3 {
+      margin: 24px 0 12px 0;
+      color: #1e293b;
+    }
+    .page-card p, .page-card li {
+      color: #334155;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .page-card ul {
+      margin-left: 28px;
+      margin-bottom: 20px;
+    }
+
+    /* contact form */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .contact-details {
+      flex: 1;
+    }
+    .contact-form {
+      flex: 1;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #2a5298;
+      box-shadow: 0 0 0 3px rgba(42,82,152,0.2);
+    }
+    button[type="submit"] {
+      background: #2a5298;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .alert-msg {
+      margin-top: 16px;
+      padding: 10px;
+      border-radius: 30px;
+      background: #e6f7e6;
+      color: #1f7840;
+      display: none;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 40px 0 24px;
+      margin-top: 20px;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 32px;
+    }
+    .footer-logo h3 {
+      color: white;
+      font-size: 1.6rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: white;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid #1e293b;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+      .hero-image i {
+        font-size: 7rem;
+      }
+      .page-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <h1>श्री Shivam Computers</h1>
+        <p>Trusted Tech Partner | Since 2015</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" data-page="home" class="active">Home</a></li>
+        <li><a href="#" data-page="contact">Contact</a></li>
+        <li><a href="#" data-page="privacy">Privacy Policy</a></li>
+        <li><a href="#" data-page="terms">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="app-root">
+  <!-- DYNAMIC CONTENT WILL BE INJECTED HERE -->
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Shri Shivam Computers</h3>
+        <p style="margin-top: 8px;">Reliable • Fast • Affordable</p>
+      </div>
+      <div class="footer-links">
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="contact">Contact</a>
+        <a href="#" data-page="privacy">Privacy</a>
+        <a href="#" data-page="terms">Terms</a>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; <span id="current-year"></span> Shri Shivam Computers | All Rights Reserved | Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> for trusted service.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Business details exactly as given
+  const OWNER_NAME = "Mohan Jadhav";
+  const EMAIL = "mohanjadhav919@gmail.com";
+  const PHONE = "9326706991";
+  const BUSINESS_NAME = "Shri Shivam Computers";
+
+  // Helper to set active nav link
+  function setActiveNav(pageId) {
+    document.querySelectorAll('.nav-links a, .footer-links a').forEach(link => {
+      const linkPage = link.getAttribute('data-page');
+      if (linkPage === pageId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  // Home Page Content
+  function renderHome() {
+    return `
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h2>Your Digital Partner <span class="highlight">Shri Shivam Computers</span></h2>
+              <p>Expert computer services, repair, software solutions & IT support. Fast, reliable, and trusted by hundreds of customers.</p>
+              <div class="btn-group">
+                <a href="#" class="btn btn-primary" data-page="contact">Get in Touch</a>
+                <a href="#" class="btn btn-outline" data-page="contact">Request a Callback</a>
+              </div>
+            </div>
+            <div class="hero-image">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="contact-card">
+            <h3 style="font-size: 1.6rem; margin-bottom: 8px;">📞 Business Contact Details</h3>
+            <p style="margin-bottom: 20px;">Reach out to <strong>${OWNER_NAME}</strong> for all your computer & IT needs.</p>
+            <div class="info-grid">
+              <div class="info-item">
+                <i class="fas fa-user-circle"></i>
+                <div><strong>Proprietor</strong><span> ${OWNER_NAME}</span></div>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div><strong>Email</strong><span> ${EMAIL}</span></div>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div><strong>Mobile</strong><span> ${PHONE}</span></div>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-store"></i>
+                <div><strong>Store</strong><span> ${BUSINESS_NAME}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 2rem;">💻 Our Services</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 40px;">
+              <div style="background: white; border-radius: 28px; padding: 24px; width: 200px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);"><i class="fas fa-desktop" style="font-size: 2.5rem; color:#2a5298;"></i><h3>PC Repair</h3><p style="font-size: 0.85rem;">Hardware & software fixes</p></div>
+              <div style="background: white; border-radius: 28px; padding: 24px; width: 200px;"><i class="fas fa-network-wired" style="font-size: 2.5rem; color:#2a5298;"></i><h3>Networking</h3><p>Router, LAN setup</p></div>
+              <div style="background: white; border-radius: 28px; padding: 24px; width: 200px;"><i class="fas fa-database" style="font-size: 2.5rem; color:#2a5298;"></i><h3>Data Recovery</h3><p>Secure backup</p></div>
+              <div style="background: white; border-radius: 28px; padding: 24px; width: 200px;"><i class="fas fa-shield-alt" style="font-size: 2.5rem; color:#2a5298;"></i><h3>Antivirus</h3><p>Security solutions</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  // Privacy Policy Page
+  function renderPrivacy() {
+    return `
+      <div class="container" style="padding: 40px 0 60px;">
+        <div class="page-card">
+          <h2>Privacy Policy</h2>
+          <p><strong>Last updated:</strong> ${new Date().toLocaleDateString()}</p>
+          <p>At ${BUSINESS_NAME} (operated by ${OWNER_NAME}), we respect your privacy and are committed to protecting any personal information you share with us. This Privacy Policy explains how we collect, use, and safeguard your data when you interact with our services, website, or contact us.</p>
+          
+          <h3>1. Information We Collect</h3>
+          <p>We may collect personal details such as your name, email address (${EMAIL}), phone number (${PHONE}), and any information you provide through contact forms, service inquiries, or direct communication.</p>
+          
+          <h3>2. How We Use Your Information</h3>
+          <p>We use the information to respond to inquiries, provide computer repair & IT services, schedule appointments, improve our offerings, and communicate important updates. We never sell or rent your personal data to third parties.</p>
+          
+          <h3>3. Data Security</h3>
+          <p>We implement reasonable security measures to protect your information from unauthorized access. However, no online transmission is 100% secure, and we encourage you to contact us directly via phone for sensitive matters.</p>
+          
+          <h3>4. Third-Party Links</h3>
+          <p>Our website may contain links to external sites. We are not responsible for the privacy practices of those websites.</p>
+          
+          <h3>5. Contact Us</h3>
+          <p>If you have any questions about this Privacy Policy, please reach out to ${OWNER_NAME} at ${EMAIL} or call ${PHONE}.</p>
+        </div>
+      </div>
+    `;
+  }
+
+  // Terms and Conditions
+  function renderTerms() {
+    return `
+      <div class="container" style="padding: 40px 0 60px;">
+        <div class="page-card">
+          <h2>Terms & Conditions</h2>
+          <p><strong>Effective Date:</strong> ${new Date().toLocaleDateString()}</p>
+          <p>Welcome to ${BUSINESS_NAME}. These Terms and Conditions govern your use of our services, website, and any interactions with ${OWNER_NAME}. By engaging our services or contacting us, you agree to the following terms.</p>
+          
+          <h3>1. Services</h3>
+          <p>We provide computer repair, IT support, software installation, networking, and related technical services. We strive to deliver high-quality workmanship, but turnaround times may vary depending on the complexity of the issue.</p>
+          
+          <h3>2. Payment & Fees</h3>
+          <p>Service fees will be communicated before work begins. Payment is typically due upon completion unless otherwise agreed. All prices are in Indian Rupees (INR). We accept cash or bank transfer as per discussion.</p>
+          
+          <h3>3. Warranty & Liability</h3>
+          <p>We guarantee our repair work for 15 days for the specific issue resolved, unless external damage occurs. We are not liable for data loss—customers are advised to maintain backups. Any hardware replaced carries the manufacturer’s warranty.</p>
+          
+          <h3>4. Cancellation & Refunds</h3>
+          <p>If you cancel a service before work starts, no fees apply. In case of unsatisfactory service, please contact us immediately at ${PHONE} and we will work to resolve the issue. Refunds are provided at the sole discretion of management.</p>
+          
+          <h3>5. Governing Law</h3>
+          <p>These terms are governed by the laws of India. Any disputes shall be subject to the jurisdiction of local courts.</p>
+          
+          <h3>6. Contact Information</h3>
+          <p>For any questions regarding terms, contact ${OWNER_NAME} — Email: ${EMAIL}, Phone: ${PHONE}.</p>
+        </div>
+      </div>
+    `;
+  }
+
+  // Contact Page (with form and details)
+  function renderContact() {
+    return `
+      <div class="container" style="padding: 40px 0 60px;">
+        <div class="page-card">
+          <h2>Contact Us</h2>
+          <div class="contact-flex">
+            <div class="contact-details">
+              <p style="font-size: 1.2rem; margin-bottom: 20px;">We'd love to hear from you! Reach out for any computer assistance, service inquiries, or support.</p>
+              <div class="info-item" style="margin-bottom: 18px; background: #f1f5f9;">
+                <i class="fas fa-user"></i>
+                <div><strong>${OWNER_NAME}</strong><span> (Proprietor)</span></div>
+              </div>
+              <div class="info-item" style="margin-bottom: 18px; background: #f1f5f9;">
+                <i class="fas fa-phone"></i>
+                <div><strong>Call / WhatsApp</strong><span> ${PHONE}</span></div>
+              </div>
+              <div class="info-item" style="margin-bottom: 18px; background: #f1f5f9;">
+                <i class="fas fa-envelope"></i>
+                <div><strong>Email</strong><span> ${EMAIL}</span></div>
+              </div>
+              <div class="info-item" style="margin-bottom: 18px; background: #f1f5f9;">
+                <i class="fas fa-clock"></i>
+                <div><strong>Business Hours</strong><span> Mon-Sat: 10:00 AM – 7:00 PM</span></div>
+              </div>
+              <p style="margin-top: 20px;"><i class="fas fa-map-marker-alt"></i> Service area: Local & On-site support available. Contact for address details.</p>
+            </div>
+            <div class="contact-form">
+              <h3>Send a Quick Message</h3>
+              <form id="direct-contact-form">
+                <div class="form-group">
+                  <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                  <input type="tel" id="phone" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                  <textarea rows="4" id="message" placeholder="Tell us about your requirement..."></textarea>
+                </div>
+                <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                <div id="form-feedback" class="alert-msg"></div>
+              </form>
+              <p style="margin-top: 20px; font-size: 0.85rem;">* We'll get back to you within 24 hours. You can also call directly at ${PHONE}.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // main render engine + attach event handlers after DOM update
+  let currentPage = "home";
+
+  function loadPage(pageId) {
+    currentPage = pageId;
+    const appRoot = document.getElementById("app-root");
+    if (!appRoot) return;
+    let content = "";
+    if (pageId === "home") content = renderHome();
+    else if (pageId === "privacy") content = renderPrivacy();
+    else if (pageId === "terms") content = renderTerms();
+    else if (pageId === "contact") content = renderContact();
+    else content = renderHome();
+
+    appRoot.innerHTML = content;
+    setActiveNav(pageId);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // after render, attach contact form handler if contact page is active
+    if (pageId === "contact") {
+      const form = document.getElementById("direct-contact-form");
+      if (form) {
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          const name = document.getElementById("name")?.value || "";
+          const email = document.getElementById("email")?.value || "";
+          const phoneVal = document.getElementById("phone")?.value || "";
+          const msg = document.getElementById("message")?.value || "";
+          const feedbackDiv = document.getElementById("form-feedback");
+          if (feedbackDiv) {
+            // Simulate sending (demo) — shows success and details (no actual mail but logs to console)
+            console.log(`Message from ${name} (${email}, ${phoneVal}): ${msg}`);
+            feedbackDiv.style.display = "block";
+            feedbackDiv.innerHTML = `✅ Thank you ${name}! Your message has been received. ${OWNER_NAME} will reply to ${email} or call ${PHONE} if needed.`;
+            feedbackDiv.style.background = "#e0f2fe";
+            feedbackDiv.style.color = "#0c4a6e";
+            form.reset();
+            setTimeout(() => {
+              feedbackDiv.style.display = "none";
+            }, 5000);
+          }
+        });
+      }
+    }
+
+    // attach any dynamic "data-page" links inside newly rendered content (like hero buttons)
+    document.querySelectorAll('[data-page]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = el.getAttribute('data-page');
+        if (page) loadPage(page);
+      });
+    });
+  }
+
+  // initial navigation and global listeners
+  document.addEventListener("DOMContentLoaded", () => {
+    // set current year in copyright
+    document.getElementById("current-year").innerText = new Date().getFullYear();
+
+    // initial load home
+    loadPage("home");
+
+    // add global navigation listeners for header & footer links
+    const allNavTriggers = document.querySelectorAll('.nav-links a, .footer-links a');
+    allNavTriggers.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = link.getAttribute('data-page');
+        if (page) loadPage(page);
+      });
+    });
+  });
+</script>
+</body>
+</html>
